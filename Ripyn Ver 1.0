@@ -1,0 +1,42 @@
+import random
+
+#instagram #ryansprtm
+
+print("=====================")
+print("WELCOME TO GAME RIPYN")
+print("=====================")
+
+posisi_ripyn = random.randint(1, 4)
+nama_user = input("Masukan Nama Kamu: ")
+print(f"Hai {nama_user} Selamat Bermain")
+
+bentuk_goa = "|_|"
+goa = [bentuk_goa] * 4
+goa_kosong = goa.copy() 
+goa_kosong = ' '.join(goa_kosong)
+
+goa[posisi_ripyn - 1] = "|0_0|"
+goa = ' '.join(goa)
+
+print(f'''
+    Manakah Goa Yang Ada Ripyn Didalam Nya
+    {goa_kosong}
+        
+    ''')
+
+jawaban = int(input("Contoh Jawaban [1/2/3/4] :"))
+conf_answer = input(f"Apakah Kamu Yakin Jawaban Nya {posisi_ripyn}? [y/n] ")
+
+if conf_answer == "y":
+    if jawaban == posisi_ripyn:
+        print(goa)
+        print(f"Selamat {nama_user} Benar!! Ripyn Ada Di Goa Nomer {posisi_ripyn}")
+    else:
+        print(f"{nama_user} Salah Ripyn Ada Di Goa Nomer {posisi_ripyn}")  
+elif conf_answer == "n":
+    print("Silahkan Ulangi Terminal")
+else:
+    print("Program Dihentikan")
+    exit()
+    
+  
